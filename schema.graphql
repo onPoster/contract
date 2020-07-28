@@ -1,0 +1,6 @@
+type Post @entity {
+  id: ID!
+  owner: Bytes!
+  type: String!
+  post: String!
+}
