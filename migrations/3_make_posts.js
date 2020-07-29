@@ -9,7 +9,7 @@ module.exports = async function(deployer) {
   await poster.post(1,'{"type":"microblog","post":"this is a post from Jim"}', {
     from: accounts[0],
   })
-  await poster.post(1,'{"type":"microblog","post":"this is a post from Bob"}', {
+  await poster.post(2,'{"type":"microblog","post":"this is a post from Bob"}', {
     from: accounts[1],
   })
 }

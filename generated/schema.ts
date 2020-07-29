@@ -42,13 +42,13 @@ export class Post extends Entity {
     this.set("id", Value.fromString(value));
   }
 
-  get owner(): Bytes {
-    let value = this.get("owner");
+  get poster(): Bytes {
+    let value = this.get("poster");
     return value.toBytes();
   }
 
-  set owner(value: Bytes) {
-    this.set("owner", Value.fromBytes(value));
+  set poster(value: Bytes) {
+    this.set("poster", Value.fromBytes(value));
   }
 
   get type(): string {
@@ -60,12 +60,12 @@ export class Post extends Entity {
     this.set("type", Value.fromString(value));
   }
 
-  get post(): string {
-    let value = this.get("post");
+  get content(): string {
+    let value = this.get("content");
     return value.toString();
   }
 
-  set post(value: string) {
-    this.set("post", Value.fromString(value));
+  set content(value: string) {
+    this.set("content", Value.fromString(value));
   }
 }

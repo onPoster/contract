@@ -23,12 +23,16 @@ export class newPost__Params {
     this._event = event;
   }
 
+  get id(): BigInt {
+    return this._event.parameters[0].value.toBigInt();
+  }
+
   get poster(): Address {
-    return this._event.parameters[0].value.toAddress();
+    return this._event.parameters[1].value.toAddress();
   }
 
   get content(): string {
-    return this._event.parameters[1].value.toString();
+    return this._event.parameters[2].value.toString();
   }
 }
 
@@ -55,8 +59,12 @@ export class PostCall__Inputs {
     this._call = call;
   }
 
+  get id(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+
   get content(): string {
-    return this._call.inputValues[0].value.toString();
+    return this._call.inputValues[1].value.toString();
   }
 }
 

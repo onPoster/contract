@@ -2,13 +2,13 @@ specVersion: 0.0.0
 description: Poster
 repository: https://github.com/auryn-macmillan/poster
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: Poster
     network: mainnet
     source:
-      address: '0xe9eD03C179641dBAE3Cc4cfDeD87fbb9178cB407'
+      address: "0xe9eD03C179641dBAE3Cc4cfDeD87fbb9178cB407"
       abi: Poster
     mapping:
       kind: ethereum/events
@@ -18,8 +18,8 @@ dataSources:
         - Post
       abis:
         - name: Poster
-          file: ./abis/Poster.json
+          file: Poster/abis/Poster.json
       eventHandlers:
         - event: newPost(uint256,address,string)
           handler: handleNewPost
-      file: ./src/mapping.ts
+      file: Poster/Poster.wasm
