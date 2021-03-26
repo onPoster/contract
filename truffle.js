@@ -9,6 +9,15 @@ module.exports = {
       port: 8545,
       network_id: '*',
     },
+    kovan: {
+      provider: function() {
+        return new HDWalletProvider(
+          process.env.MNEMONIC,
+          `https://ropsten.infura.io/v3/${process.env.ROPSTEN_INFURA_API_KEY}`
+        )
+      },
+      network_id: '42',
+    },
     ropsten: {
       provider: function() {
         return new HDWalletProvider(
@@ -21,7 +30,7 @@ module.exports = {
   },
   compilers: {
     solc: {
-      version: '0.6.4'    // Fetch exact version from solc-bin (default: truffle's version)
+      version: '0.8.0'    // Fetch exact version from solc-bin (default: truffle's version)
     }
   }
 }
