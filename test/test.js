@@ -1,24 +1,20 @@
 const { expect, assert } = require('chai');
-const { BN, expectEvent, expectRevert } = require('@openzeppelin/test-helpers');
 
 describe('Poster should:', function() {
-    let bob, deployer, me;
+    let deployer, user;
     before(async function() {
-        [deployer, me, bob] = await ethers.getSigners();
-    });
-
-    it('deploy Poster contract', async function() {
+        [deployer, user, bob] = await ethers.getSigners();
         const Poster = await ethers.getContractFactory('Poster', deployer);
         poster = await Poster.deploy();
-        expect(await poster.address).to.not.equal(0);
+        expect(await poster.address);
     });
 
-    it('let me post', async function() {
-
-        let content = '{"type":"microblog","post":"this is a post from me"}';
-        const receipt = await poster.connect(me).post(content);
-        console.log(receipt);
-        // Test that a NewPost event was emitted with the new value
-        expectEvent(receipt, 'NewPost', { content: content });
-    })
+    it('let user make a post', async function() {
+        let content = '{"type":"microblog","post":"this is a post from user"}';
+        const receipt = await poster.connect(user).post(content);
+        // Test that a NewPost event was emitted with the correct id, user, and content
+        await expect(await poster.connect(user).post(content))
+        .to.emit(poster, 'NewPost')
+        .withArgs("0xd1cb4e4d2082f3a3cf53a27d24685fb07ff548c94a7d1f4e9228558b6a987a14",user.address, content);
+    });
 });
