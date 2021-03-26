@@ -4,6 +4,7 @@
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
+    "deploy-contract": "hardhat run scripts/deploy.js",
     "create": "graph create auryn-macmillan/poster --node https://api.thegraph.com/deploy/",
     "create-local": "graph create auryn-macmillan/poster --node http://127.0.0.1:8020",
     "codegen": "graph codegen",

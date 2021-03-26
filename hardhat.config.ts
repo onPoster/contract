@@ -30,7 +30,7 @@ module.exports = {
     },
     kovan: {
       ...sharedNetworkConfig,
-      url: `https://goerly.infura.io/v3/${INFURA_KEY}`,
+      url: `https://kovan.infura.io/v3/${INFURA_KEY}`,
     },
   },
   namedAccounts: {
