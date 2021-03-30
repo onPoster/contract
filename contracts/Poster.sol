@@ -19,7 +19,7 @@ pragma solidity 0.8.0;
 
 
 contract Poster {
-    event NewPost(bytes32 id, address user, string content);
+    event NewPost(bytes32 indexed id, address indexed user, string indexed content);
 
     function post(string memory content) public {
         bytes32 id = keccak256(abi.encodePacked(msg.sender, block.chainid, block.number, gasleft()));

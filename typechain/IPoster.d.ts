@@ -19,7 +19,7 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import { TypedEventFilter, TypedEvent, TypedListener } from "./commons";
 
-interface PosterInterface extends ethers.utils.Interface {
+interface IPosterInterface extends ethers.utils.Interface {
   functions: {
     "post(string)": FunctionFragment;
   };
@@ -35,7 +35,7 @@ interface PosterInterface extends ethers.utils.Interface {
   getEvent(nameOrSignatureOrTopic: "NewPost"): EventFragment;
 }
 
-export class Poster extends Contract {
+export class IPoster extends Contract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
@@ -76,7 +76,7 @@ export class Poster extends Contract {
     toBlock?: string | number | undefined
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
-  interface: PosterInterface;
+  interface: IPosterInterface;
 
   functions: {
     post(
@@ -108,9 +108,9 @@ export class Poster extends Contract {
 
   filters: {
     NewPost(
-      id: BytesLike | null,
-      user: string | null,
-      content: string | null
+      id: null,
+      user: null,
+      content: null
     ): TypedEventFilter<
       [string, string, string],
       { id: string; user: string; content: string }
