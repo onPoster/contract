@@ -110,7 +110,7 @@ export class Poster extends Contract {
     NewPost(
       id: BytesLike | null,
       user: string | null,
-      content: string | null
+      content: null
     ): TypedEventFilter<
       [string, string, string],
       { id: string; user: string; content: string }

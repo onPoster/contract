@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/auryn/bin/poster/contracts/Poster.sol": {
-      "lastModificationDate": 1617116802024,
-      "contentHash": "8e3e6609cf446850f4253260f802fecb",
+      "lastModificationDate": 1617117132267,
+      "contentHash": "d5c146f338acf115a0c7e3794afa4b06",
       "sourceName": "contracts/Poster.sol",
       "solcConfig": {
         "version": "0.8.0",
