@@ -108,8 +108,8 @@ export class IPoster extends Contract {
 
   filters: {
     NewPost(
-      id: null,
-      user: null,
+      id: BytesLike | null,
+      user: string | null,
       content: null
     ): TypedEventFilter<
       [string, string, string],

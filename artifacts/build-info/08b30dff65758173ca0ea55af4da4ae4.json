@@ -1,5 +1,5 @@
 {
-  "id": "22fcb1a368377c120f072ce8d15fefad",
+  "id": "08b30dff65758173ca0ea55af4da4ae4",
   "_format": "hh-sol-build-info-1",
   "solcVersion": "0.8.0",
   "solcLongVersion": "0.8.0+commit.c7dfd78e",
@@ -7,7 +7,7 @@
     "language": "Solidity",
     "sources": {
       "contracts/IPoster.sol": {
-        "content": "/*\n\n██████╗  ██████╗ ███████╗████████╗███████╗██████╗\n██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗\n██████╔╝██║   ██║███████╗   ██║   █████╗  ██████╔╝\n██╔═══╝ ██║   ██║╚════██║   ██║   ██╔══╝  ██╔══██╗\n██║     ╚██████╔╝███████║   ██║   ███████╗██║  ██║\n╚═╝      ╚═════╝ ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝\n\nA ridiculously simple general purpose social media smart contract.\nIt takes a string as a parameter and emits that string, along with a unique id, as an event. That's it.\n\nMade with ❤️ by Auryn.eth\n\n*/\n// SPDX-License-Identifier: LGPL-3.0-only\n\npragma solidity 0.8.0;\n\ninterface IPoster {\n    event NewPost(bytes32 id, address user, string content);\n\n    function post(string memory content) external;\n}\n"
+        "content": "/*\n\n██████╗  ██████╗ ███████╗████████╗███████╗██████╗\n██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗\n██████╔╝██║   ██║███████╗   ██║   █████╗  ██████╔╝\n██╔═══╝ ██║   ██║╚════██║   ██║   ██╔══╝  ██╔══██╗\n██║     ╚██████╔╝███████║   ██║   ███████╗██║  ██║\n╚═╝      ╚═════╝ ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝\n\nA ridiculously simple general purpose social media smart contract.\nIt takes a string as a parameter and emits that string, along with a unique id, as an event. That's it.\n\nMade with ❤️ by Auryn.eth\n\n*/\n// SPDX-License-Identifier: LGPL-3.0-only\n\npragma solidity 0.8.0;\n\ninterface IPoster {\n    event NewPost(bytes32 indexed id, address indexed user, string content);\n\n    function post(string memory content) external;\n}\n"
       }
     },
     "settings": {
@@ -39,13 +39,13 @@
               "anonymous": false,
               "inputs": [
                 {
-                  "indexed": false,
+                  "indexed": true,
                   "internalType": "bytes32",
                   "name": "id",
                   "type": "bytes32"
                 },
                 {
-                  "indexed": false,
+                  "indexed": true,
                   "internalType": "address",
                   "name": "user",
                   "type": "address"
@@ -145,12 +145,12 @@
                       {
                         "constant": false,
                         "id": 3,
-                        "indexed": false,
+                        "indexed": true,
                         "mutability": "mutable",
                         "name": "id",
                         "nodeType": "VariableDeclaration",
                         "scope": 9,
-                        "src": "1111:10:0",
+                        "src": "1111:18:0",
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -172,12 +172,12 @@
                       {
                         "constant": false,
                         "id": 5,
-                        "indexed": false,
+                        "indexed": true,
                         "mutability": "mutable",
                         "name": "user",
                         "nodeType": "VariableDeclaration",
                         "scope": 9,
-                        "src": "1123:12:0",
+                        "src": "1131:20:0",
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -188,7 +188,7 @@
                           "id": 4,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
-                          "src": "1123:7:0",
+                          "src": "1131:7:0",
                           "stateMutability": "nonpayable",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -205,7 +205,7 @@
                         "name": "content",
                         "nodeType": "VariableDeclaration",
                         "scope": 9,
-                        "src": "1137:14:0",
+                        "src": "1153:14:0",
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -216,7 +216,7 @@
                           "id": 6,
                           "name": "string",
                           "nodeType": "ElementaryTypeName",
-                          "src": "1137:6:0",
+                          "src": "1153:6:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_storage_ptr",
                             "typeString": "string"
@@ -225,9 +225,9 @@
                         "visibility": "internal"
                       }
                     ],
-                    "src": "1110:42:0"
+                    "src": "1110:58:0"
                   },
-                  "src": "1097:56:0"
+                  "src": "1097:72:0"
                 },
                 {
                   "functionSelector": "8ee93cf3",
@@ -248,7 +248,7 @@
                         "name": "content",
                         "nodeType": "VariableDeclaration",
                         "scope": 14,
-                        "src": "1173:21:0",
+                        "src": "1189:21:0",
                         "stateVariable": false,
                         "storageLocation": "memory",
                         "typeDescriptions": {
@@ -259,7 +259,7 @@
                           "id": 10,
                           "name": "string",
                           "nodeType": "ElementaryTypeName",
-                          "src": "1173:6:0",
+                          "src": "1189:6:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_storage_ptr",
                             "typeString": "string"
@@ -268,26 +268,26 @@
                         "visibility": "internal"
                       }
                     ],
-                    "src": "1172:23:0"
+                    "src": "1188:23:0"
                   },
                   "returnParameters": {
                     "id": 13,
                     "nodeType": "ParameterList",
                     "parameters": [],
-                    "src": "1204:0:0"
+                    "src": "1220:0:0"
                   },
                   "scope": 15,
-                  "src": "1159:46:0",
+                  "src": "1175:46:0",
                   "stateMutability": "nonpayable",
                   "virtual": false,
                   "visibility": "external"
                 }
               ],
               "scope": 16,
-              "src": "1073:134:0"
+              "src": "1073:150:0"
             }
           ],
-          "src": "1049:159:0"
+          "src": "1049:175:0"
         },
         "id": 0
       }

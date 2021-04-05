@@ -36,8 +36,8 @@
       ]
     },
     "/home/auryn/bin/poster/contracts/IPoster.sol": {
-      "lastModificationDate": 1617108648065,
-      "contentHash": "b8579832d650a1248be241ab147986b6",
+      "lastModificationDate": 1617630735517,
+      "contentHash": "12f0232c6a6a00d83c98acf2ceef3e2b",
       "sourceName": "contracts/IPoster.sol",
       "solcConfig": {
         "version": "0.8.0",

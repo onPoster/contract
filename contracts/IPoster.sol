@@ -18,7 +18,7 @@ Made with ❤️ by Auryn.eth
 pragma solidity 0.8.0;
 
 interface IPoster {
-    event NewPost(bytes32 id, address user, string content);
+    event NewPost(bytes32 indexed id, address indexed user, string content);
 
     function post(string memory content) external;
 }
