@@ -22,9 +22,9 @@ const _abi = [
     inputs: [
       {
         indexed: true,
-        internalType: "bytes32",
+        internalType: "uint256",
         name: "id",
-        type: "bytes32",
+        type: "uint256",
       },
       {
         indexed: true,

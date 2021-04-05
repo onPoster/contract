@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/auryn/bin/poster/contracts/Poster.sol": {
-      "lastModificationDate": 1617117132267,
-      "contentHash": "d5c146f338acf115a0c7e3794afa4b06",
+      "lastModificationDate": 1617632336971,
+      "contentHash": "cd5c1caa64f4bb228f33d6b8ab8070ef",
       "sourceName": "contracts/Poster.sol",
       "solcConfig": {
         "version": "0.8.0",
@@ -36,8 +36,8 @@
       ]
     },
     "/home/auryn/bin/poster/contracts/IPoster.sol": {
-      "lastModificationDate": 1617630735517,
-      "contentHash": "12f0232c6a6a00d83c98acf2ceef3e2b",
+      "lastModificationDate": 1617632113796,
+      "contentHash": "5fdf3cb0a1ea95c12114ecd8e4eeec45",
       "sourceName": "contracts/IPoster.sol",
       "solcConfig": {
         "version": "0.8.0",

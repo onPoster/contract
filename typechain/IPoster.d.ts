@@ -29,7 +29,7 @@ interface IPosterInterface extends ethers.utils.Interface {
   decodeFunctionResult(functionFragment: "post", data: BytesLike): Result;
 
   events: {
-    "NewPost(bytes32,address,string)": EventFragment;
+    "NewPost(uint256,address,string)": EventFragment;
   };
 
   getEvent(nameOrSignatureOrTopic: "NewPost"): EventFragment;
@@ -108,12 +108,12 @@ export class IPoster extends Contract {
 
   filters: {
     NewPost(
-      id: BytesLike | null,
+      id: BigNumberish | null,
       user: string | null,
       content: null
     ): TypedEventFilter<
-      [string, string, string],
-      { id: string; user: string; content: string }
+      [BigNumber, string, string],
+      { id: BigNumber; user: string; content: string }
     >;
   };
 
