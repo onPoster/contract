@@ -21,18 +21,15 @@ import { TypedEventFilter, TypedEvent, TypedListener } from "./commons";
 
 interface PosterInterface extends ethers.utils.Interface {
   functions: {
-    "id()": FunctionFragment;
     "post(string)": FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "id", values?: undefined): string;
   encodeFunctionData(functionFragment: "post", values: [string]): string;
 
-  decodeFunctionResult(functionFragment: "id", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "post", data: BytesLike): Result;
 
   events: {
-    "NewPost(uint256,address,string)": EventFragment;
+    "NewPost(address,string)": EventFragment;
   };
 
   getEvent(nameOrSignatureOrTopic: "NewPost"): EventFragment;
@@ -82,10 +79,6 @@ export class Poster extends Contract {
   interface: PosterInterface;
 
   functions: {
-    id(overrides?: CallOverrides): Promise<[BigNumber]>;
-
-    "id()"(overrides?: CallOverrides): Promise<[BigNumber]>;
-
     post(
       content: string,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -96,10 +89,6 @@ export class Poster extends Contract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
-
-  id(overrides?: CallOverrides): Promise<BigNumber>;
-
-  "id()"(overrides?: CallOverrides): Promise<BigNumber>;
 
   post(
     content: string,
@@ -112,10 +101,6 @@ export class Poster extends Contract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    id(overrides?: CallOverrides): Promise<BigNumber>;
-
-    "id()"(overrides?: CallOverrides): Promise<BigNumber>;
-
     post(content: string, overrides?: CallOverrides): Promise<void>;
 
     "post(string)"(content: string, overrides?: CallOverrides): Promise<void>;
@@ -123,20 +108,12 @@ export class Poster extends Contract {
 
   filters: {
     NewPost(
-      id: BigNumberish | null,
       user: string | null,
       content: null
-    ): TypedEventFilter<
-      [BigNumber, string, string],
-      { id: BigNumber; user: string; content: string }
-    >;
+    ): TypedEventFilter<[string, string], { user: string; content: string }>;
   };
 
   estimateGas: {
-    id(overrides?: CallOverrides): Promise<BigNumber>;
-
-    "id()"(overrides?: CallOverrides): Promise<BigNumber>;
-
     post(
       content: string,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -149,10 +126,6 @@ export class Poster extends Contract {
   };
 
   populateTransaction: {
-    id(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    "id()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
     post(
       content: string,
       overrides?: Overrides & { from?: string | Promise<string> }
