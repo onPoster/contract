@@ -36,8 +36,8 @@
       ]
     },
     "/home/auryn/git/poster/contracts/Poster.sol": {
-      "lastModificationDate": 1627489119031,
-      "contentHash": "4492ada0422025ef35bbe9e423721c28",
+      "lastModificationDate": 1627490756310,
+      "contentHash": "63be8ca3cb986fe940c0847afb3e93e1",
       "sourceName": "contracts/Poster.sol",
       "solcConfig": {
         "version": "0.8.0",

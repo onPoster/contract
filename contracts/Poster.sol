@@ -8,7 +8,7 @@
 ╚═╝      ╚═════╝ ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
 
 A ridiculously simple general purpose social media smart contract.
-It takes a string as a parameter and emits that string, along with a unique id, as an event. That's it.
+It takes a string as a parameter and emits that string, along with msg.sender, as an event. That's it.
 
 Made with ❤️ by Auryn.eth
 
