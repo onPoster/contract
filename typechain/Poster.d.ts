@@ -28,11 +28,7 @@ interface PosterInterface extends ethers.utils.Interface {
 
   decodeFunctionResult(functionFragment: "post", data: BytesLike): Result;
 
-  events: {
-    "NewPost(address,string)": EventFragment;
-  };
-
-  getEvent(nameOrSignatureOrTopic: "NewPost"): EventFragment;
+  events: {};
 }
 
 export class Poster extends Contract {
@@ -106,12 +102,7 @@ export class Poster extends Contract {
     "post(string)"(content: string, overrides?: CallOverrides): Promise<void>;
   };
 
-  filters: {
-    NewPost(
-      user: string | null,
-      content: null
-    ): TypedEventFilter<[string, string], { user: string; content: string }>;
-  };
+  filters: {};
 
   estimateGas: {
     post(

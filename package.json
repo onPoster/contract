@@ -1,6 +1,9 @@
 {
   "name": "poster",
-  "version": "3.0.1",
+  "version": "4.0.0",
+  "description": "A ridiculously simple general purpose social media smart contract. It takes a string as a parameter. That's it.",
+  "author": "Auryn Macmillan <hi@auryn.xyz>",
+  "license": "LGPL-3.0+",
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
