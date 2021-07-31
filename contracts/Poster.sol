@@ -21,7 +21,7 @@ pragma solidity 0.8.0;
 contract Poster {
     event NewPost(address indexed user, string content);
 
-    function post(string memory content) public {
+    function post(string calldata content) public {
         emit NewPost(msg.sender, content);
     }
 }
