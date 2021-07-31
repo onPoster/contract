@@ -8,7 +8,7 @@
 ╚═╝      ╚═════╝ ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
 
 A ridiculously simple general purpose social media smart contract.
-It takes a string as a parameter and emits that string, along with a unique id, as an event. That's it.
+It takes a string as a parameter and emits that string, along with msg.sender, as an event. That's it.
 
 Made with ❤️ by Auryn.eth
 
@@ -17,8 +17,9 @@ Made with ❤️ by Auryn.eth
 
 pragma solidity 0.8.0;
 
+
 interface IPoster {
-    event NewPost(uint256 indexed id, address indexed user, string content);
+    event NewPost(address indexed user, string content);
 
     function post(string memory content) external;
 }

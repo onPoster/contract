@@ -1,0 +1,246 @@
+{
+  "id": "5f7c5ad2b539331d207519df276ae370",
+  "_format": "hh-sol-build-info-1",
+  "solcVersion": "0.8.0",
+  "solcLongVersion": "0.8.0+commit.c7dfd78e",
+  "input": {
+    "language": "Solidity",
+    "sources": {
+      "contracts/interfaces/ISingletonFactory.sol": {
+        "content": "// SPDX-License-Identifier: LGPL-3.0-only\n\npragma solidity 0.8.0;\n\ninterface ISingletonFactory {\n     /// @dev Deploys `_initCode` using `_salt` for defining the deterministic address.\n     /// @param _initCode Initialization code.\n     /// @param _salt Arbitrary value to modify resulting address.\n     /// @return createdContract Created contract address.\n    function deploy(bytes memory _initCode, bytes32 _salt) external returns (address payable createdContract);\n}\n"
+      }
+    },
+    "settings": {
+      "optimizer": {
+        "enabled": false,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers"
+          ],
+          "": [
+            "ast"
+          ]
+        }
+      }
+    }
+  },
+  "output": {
+    "contracts": {
+      "contracts/interfaces/ISingletonFactory.sol": {
+        "ISingletonFactory": {
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "bytes",
+                  "name": "_initCode",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "_salt",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "deploy",
+              "outputs": [
+                {
+                  "internalType": "address payable",
+                  "name": "createdContract",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            }
+          ],
+          "evm": {
+            "bytecode": {
+              "generatedSources": [],
+              "linkReferences": {},
+              "object": "",
+              "opcodes": "",
+              "sourceMap": ""
+            },
+            "deployedBytecode": {
+              "generatedSources": [],
+              "immutableReferences": {},
+              "linkReferences": {},
+              "object": "",
+              "opcodes": "",
+              "sourceMap": ""
+            },
+            "methodIdentifiers": {
+              "deploy(bytes,bytes32)": "4af63f02"
+            }
+          }
+        }
+      }
+    },
+    "sources": {
+      "contracts/interfaces/ISingletonFactory.sol": {
+        "ast": {
+          "absolutePath": "contracts/interfaces/ISingletonFactory.sol",
+          "exportedSymbols": {
+            "ISingletonFactory": [
+              12
+            ]
+          },
+          "id": 13,
+          "license": "LGPL-3.0-only",
+          "nodeType": "SourceUnit",
+          "nodes": [
+            {
+              "id": 1,
+              "literals": [
+                "solidity",
+                "0.8",
+                ".0"
+              ],
+              "nodeType": "PragmaDirective",
+              "src": "43:22:0"
+            },
+            {
+              "abstract": false,
+              "baseContracts": [],
+              "contractDependencies": [],
+              "contractKind": "interface",
+              "fullyImplemented": false,
+              "id": 12,
+              "linearizedBaseContracts": [
+                12
+              ],
+              "name": "ISingletonFactory",
+              "nodeType": "ContractDefinition",
+              "nodes": [
+                {
+                  "documentation": {
+                    "id": 2,
+                    "nodeType": "StructuredDocumentation",
+                    "src": "102:255:0",
+                    "text": "@dev Deploys `_initCode` using `_salt` for defining the deterministic address.\n @param _initCode Initialization code.\n @param _salt Arbitrary value to modify resulting address.\n @return createdContract Created contract address."
+                  },
+                  "functionSelector": "4af63f02",
+                  "id": 11,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "deploy",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 7,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 4,
+                        "mutability": "mutable",
+                        "name": "_initCode",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 11,
+                        "src": "378:22:0",
+                        "stateVariable": false,
+                        "storageLocation": "memory",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes"
+                        },
+                        "typeName": {
+                          "id": 3,
+                          "name": "bytes",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "378:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes_storage_ptr",
+                            "typeString": "bytes"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 6,
+                        "mutability": "mutable",
+                        "name": "_salt",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 11,
+                        "src": "402:13:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "typeName": {
+                          "id": 5,
+                          "name": "bytes32",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "402:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "377:39:0"
+                  },
+                  "returnParameters": {
+                    "id": 10,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 9,
+                        "mutability": "mutable",
+                        "name": "createdContract",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 11,
+                        "src": "435:31:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        "typeName": {
+                          "id": 8,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "435:15:0",
+                          "stateMutability": "payable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "434:33:0"
+                  },
+                  "scope": 12,
+                  "src": "362:106:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": false,
+                  "visibility": "external"
+                }
+              ],
+              "scope": 13,
+              "src": "67:403:0"
+            }
+          ],
+          "src": "43:428:0"
+        },
+        "id": 0
+      }
+    }
+  }
+}

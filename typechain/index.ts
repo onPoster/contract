@@ -2,7 +2,9 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { IPoster } from "./IPoster";
+export type { ISingletonFactory } from "./ISingletonFactory";
 export type { Poster } from "./Poster";
 
 export { IPoster__factory } from "./factories/IPoster__factory";
+export { ISingletonFactory__factory } from "./factories/ISingletonFactory__factory";
 export { Poster__factory } from "./factories/Poster__factory";

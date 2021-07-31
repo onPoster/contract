@@ -19,23 +19,22 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import { TypedEventFilter, TypedEvent, TypedListener } from "./commons";
 
-interface IPosterInterface extends ethers.utils.Interface {
+interface ISingletonFactoryInterface extends ethers.utils.Interface {
   functions: {
-    "post(string)": FunctionFragment;
+    "deploy(bytes,bytes32)": FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "post", values: [string]): string;
+  encodeFunctionData(
+    functionFragment: "deploy",
+    values: [BytesLike, BytesLike]
+  ): string;
 
-  decodeFunctionResult(functionFragment: "post", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "deploy", data: BytesLike): Result;
 
-  events: {
-    "NewPost(address,string)": EventFragment;
-  };
-
-  getEvent(nameOrSignatureOrTopic: "NewPost"): EventFragment;
+  events: {};
 }
 
-export class IPoster extends Contract {
+export class ISingletonFactory extends Contract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
@@ -76,63 +75,74 @@ export class IPoster extends Contract {
     toBlock?: string | number | undefined
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
-  interface: IPosterInterface;
+  interface: ISingletonFactoryInterface;
 
   functions: {
-    post(
-      content: string,
+    deploy(
+      _initCode: BytesLike,
+      _salt: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    "post(string)"(
-      content: string,
+    "deploy(bytes,bytes32)"(
+      _initCode: BytesLike,
+      _salt: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
 
-  post(
-    content: string,
+  deploy(
+    _initCode: BytesLike,
+    _salt: BytesLike,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  "post(string)"(
-    content: string,
+  "deploy(bytes,bytes32)"(
+    _initCode: BytesLike,
+    _salt: BytesLike,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    post(content: string, overrides?: CallOverrides): Promise<void>;
+    deploy(
+      _initCode: BytesLike,
+      _salt: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<string>;
 
-    "post(string)"(content: string, overrides?: CallOverrides): Promise<void>;
+    "deploy(bytes,bytes32)"(
+      _initCode: BytesLike,
+      _salt: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<string>;
   };
 
-  filters: {
-    NewPost(
-      user: string | null,
-      content: null
-    ): TypedEventFilter<[string, string], { user: string; content: string }>;
-  };
+  filters: {};
 
   estimateGas: {
-    post(
-      content: string,
+    deploy(
+      _initCode: BytesLike,
+      _salt: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    "post(string)"(
-      content: string,
+    "deploy(bytes,bytes32)"(
+      _initCode: BytesLike,
+      _salt: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
-    post(
-      content: string,
+    deploy(
+      _initCode: BytesLike,
+      _salt: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    "post(string)"(
-      content: string,
+    "deploy(bytes,bytes32)"(
+      _initCode: BytesLike,
+      _salt: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
   };

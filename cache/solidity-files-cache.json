@@ -1,10 +1,44 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/auryn/git/auryn-macmillan/poster/contracts/IPoster.sol": {
-      "lastModificationDate": 1627488826803,
-      "contentHash": "5fdf3cb0a1ea95c12114ecd8e4eeec45",
-      "sourceName": "contracts/IPoster.sol",
+    "/home/auryn/git/auryn-macmillan/poster/contracts/Poster.sol": {
+      "lastModificationDate": 1627570940765,
+      "contentHash": "63be8ca3cb986fe940c0847afb3e93e1",
+      "sourceName": "contracts/Poster.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.0"
+      ],
+      "artifacts": [
+        "Poster"
+      ]
+    },
+    "/home/auryn/git/auryn-macmillan/poster/contracts/interfaces/IPoster.sol": {
+      "lastModificationDate": 1627574839789,
+      "contentHash": "5ec5e8801f59e0b368472363f1ebbed4",
+      "sourceName": "contracts/interfaces/IPoster.sol",
       "solcConfig": {
         "version": "0.8.0",
         "settings": {
@@ -35,10 +69,10 @@
         "IPoster"
       ]
     },
-    "/home/auryn/git/auryn-macmillan/poster/contracts/Poster.sol": {
-      "lastModificationDate": 1627522740719,
-      "contentHash": "22fe52f10c63523813488f93187f9627",
-      "sourceName": "contracts/Poster.sol",
+    "/home/auryn/git/auryn-macmillan/poster/contracts/interfaces/ISingletonFactory.sol": {
+      "lastModificationDate": 1627575040974,
+      "contentHash": "02b7ff5374bf4bdb71f8fd235d36b32a",
+      "sourceName": "contracts/interfaces/ISingletonFactory.sol",
       "solcConfig": {
         "version": "0.8.0",
         "settings": {
@@ -66,7 +100,7 @@
         "0.8.0"
       ],
       "artifacts": [
-        "Poster"
+        "ISingletonFactory"
       ]
     }
   }

@@ -1,17 +1,11 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IPoster",
-  "sourceName": "contracts/IPoster.sol",
+  "sourceName": "contracts/interfaces/IPoster.sol",
   "abi": [
     {
       "anonymous": false,
       "inputs": [
-        {
-          "indexed": true,
-          "internalType": "uint256",
-          "name": "id",
-          "type": "uint256"
-        },
         {
           "indexed": true,
           "internalType": "address",

@@ -1,0 +1,487 @@
+{
+  "id": "3e806cd8e15e3ded9954288b531aed06",
+  "_format": "hh-sol-build-info-1",
+  "solcVersion": "0.8.0",
+  "solcLongVersion": "0.8.0+commit.c7dfd78e",
+  "input": {
+    "language": "Solidity",
+    "sources": {
+      "contracts/interfaces/IPoster.sol": {
+        "content": "/*\n\n██████╗  ██████╗ ███████╗████████╗███████╗██████╗\n██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗\n██████╔╝██║   ██║███████╗   ██║   █████╗  ██████╔╝\n██╔═══╝ ██║   ██║╚════██║   ██║   ██╔══╝  ██╔══██╗\n██║     ╚██████╔╝███████║   ██║   ███████╗██║  ██║\n╚═╝      ╚═════╝ ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝\n\nA ridiculously simple general purpose social media smart contract.\nIt takes a string as a parameter and emits that string, along with msg.sender, as an event. That's it.\n\nMade with ❤️ by Auryn.eth\n\n*/\n// SPDX-License-Identifier: LGPL-3.0-only\n\npragma solidity 0.8.0;\n\n\ninterface IPoster {\n    event NewPost(address indexed user, string content);\n\n    function post(string memory content) external;\n}\n"
+      },
+      "contracts/interfaces/ISingletonFactory.sol": {
+        "content": "pragma solidity 0.8.0;\n\ninterface ISingletonFactory {\n    /**\n     * @notice Deploys `_initCode` using `_salt` for defining the deterministic address.\n     * @param _initCode Initialization code.\n     * @param _salt Arbitrary value to modify resulting address.\n     * @return createdContract Created contract address.\n     */\n    function deploy(bytes memory _initCode, bytes32 _salt) external returns (address payable createdContract);\n}\n"
+      }
+    },
+    "settings": {
+      "optimizer": {
+        "enabled": false,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers"
+          ],
+          "": [
+            "ast"
+          ]
+        }
+      }
+    }
+  },
+  "output": {
+    "contracts": {
+      "contracts/interfaces/IPoster.sol": {
+        "IPoster": {
+          "abi": [
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "user",
+                  "type": "address"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "string",
+                  "name": "content",
+                  "type": "string"
+                }
+              ],
+              "name": "NewPost",
+              "type": "event"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "string",
+                  "name": "content",
+                  "type": "string"
+                }
+              ],
+              "name": "post",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            }
+          ],
+          "evm": {
+            "bytecode": {
+              "generatedSources": [],
+              "linkReferences": {},
+              "object": "",
+              "opcodes": "",
+              "sourceMap": ""
+            },
+            "deployedBytecode": {
+              "generatedSources": [],
+              "immutableReferences": {},
+              "linkReferences": {},
+              "object": "",
+              "opcodes": "",
+              "sourceMap": ""
+            },
+            "methodIdentifiers": {
+              "post(string)": "8ee93cf3"
+            }
+          }
+        }
+      },
+      "contracts/interfaces/ISingletonFactory.sol": {
+        "ISingletonFactory": {
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "bytes",
+                  "name": "_initCode",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "_salt",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "deploy",
+              "outputs": [
+                {
+                  "internalType": "address payable",
+                  "name": "createdContract",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            }
+          ],
+          "evm": {
+            "bytecode": {
+              "generatedSources": [],
+              "linkReferences": {},
+              "object": "",
+              "opcodes": "",
+              "sourceMap": ""
+            },
+            "deployedBytecode": {
+              "generatedSources": [],
+              "immutableReferences": {},
+              "linkReferences": {},
+              "object": "",
+              "opcodes": "",
+              "sourceMap": ""
+            },
+            "methodIdentifiers": {
+              "deploy(bytes,bytes32)": "4af63f02"
+            }
+          }
+        }
+      }
+    },
+    "errors": [
+      {
+        "component": "general",
+        "errorCode": "1878",
+        "formattedMessage": "Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> contracts/interfaces/ISingletonFactory.sol\n\n",
+        "message": "SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.",
+        "severity": "warning",
+        "sourceLocation": {
+          "end": -1,
+          "file": "contracts/interfaces/ISingletonFactory.sol",
+          "start": -1
+        },
+        "type": "Warning"
+      }
+    ],
+    "sources": {
+      "contracts/interfaces/IPoster.sol": {
+        "ast": {
+          "absolutePath": "contracts/interfaces/IPoster.sol",
+          "exportedSymbols": {
+            "IPoster": [
+              13
+            ]
+          },
+          "id": 14,
+          "license": "LGPL-3.0-only",
+          "nodeType": "SourceUnit",
+          "nodes": [
+            {
+              "id": 1,
+              "literals": [
+                "solidity",
+                "0.8",
+                ".0"
+              ],
+              "nodeType": "PragmaDirective",
+              "src": "1048:22:0"
+            },
+            {
+              "abstract": false,
+              "baseContracts": [],
+              "contractDependencies": [],
+              "contractKind": "interface",
+              "fullyImplemented": false,
+              "id": 13,
+              "linearizedBaseContracts": [
+                13
+              ],
+              "name": "IPoster",
+              "nodeType": "ContractDefinition",
+              "nodes": [
+                {
+                  "anonymous": false,
+                  "id": 7,
+                  "name": "NewPost",
+                  "nodeType": "EventDefinition",
+                  "parameters": {
+                    "id": 6,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 3,
+                        "indexed": true,
+                        "mutability": "mutable",
+                        "name": "user",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 7,
+                        "src": "1111:20:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "typeName": {
+                          "id": 2,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1111:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 5,
+                        "indexed": false,
+                        "mutability": "mutable",
+                        "name": "content",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 7,
+                        "src": "1133:14:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string"
+                        },
+                        "typeName": {
+                          "id": 4,
+                          "name": "string",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1133:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "1110:38:0"
+                  },
+                  "src": "1097:52:0"
+                },
+                {
+                  "functionSelector": "8ee93cf3",
+                  "id": 12,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "post",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 10,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 9,
+                        "mutability": "mutable",
+                        "name": "content",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 12,
+                        "src": "1169:21:0",
+                        "stateVariable": false,
+                        "storageLocation": "memory",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string"
+                        },
+                        "typeName": {
+                          "id": 8,
+                          "name": "string",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1169:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "1168:23:0"
+                  },
+                  "returnParameters": {
+                    "id": 11,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "1200:0:0"
+                  },
+                  "scope": 13,
+                  "src": "1155:46:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": false,
+                  "visibility": "external"
+                }
+              ],
+              "scope": 14,
+              "src": "1073:130:0"
+            }
+          ],
+          "src": "1048:156:0"
+        },
+        "id": 0
+      },
+      "contracts/interfaces/ISingletonFactory.sol": {
+        "ast": {
+          "absolutePath": "contracts/interfaces/ISingletonFactory.sol",
+          "exportedSymbols": {
+            "ISingletonFactory": [
+              26
+            ]
+          },
+          "id": 27,
+          "nodeType": "SourceUnit",
+          "nodes": [
+            {
+              "id": 15,
+              "literals": [
+                "solidity",
+                "0.8",
+                ".0"
+              ],
+              "nodeType": "PragmaDirective",
+              "src": "0:22:1"
+            },
+            {
+              "abstract": false,
+              "baseContracts": [],
+              "contractDependencies": [],
+              "contractKind": "interface",
+              "fullyImplemented": false,
+              "id": 26,
+              "linearizedBaseContracts": [
+                26
+              ],
+              "name": "ISingletonFactory",
+              "nodeType": "ContractDefinition",
+              "nodes": [
+                {
+                  "documentation": {
+                    "id": 16,
+                    "nodeType": "StructuredDocumentation",
+                    "src": "58:267:1",
+                    "text": " @notice Deploys `_initCode` using `_salt` for defining the deterministic address.\n @param _initCode Initialization code.\n @param _salt Arbitrary value to modify resulting address.\n @return createdContract Created contract address."
+                  },
+                  "functionSelector": "4af63f02",
+                  "id": 25,
+                  "implemented": false,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "deploy",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 21,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 18,
+                        "mutability": "mutable",
+                        "name": "_initCode",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 25,
+                        "src": "346:22:1",
+                        "stateVariable": false,
+                        "storageLocation": "memory",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes"
+                        },
+                        "typeName": {
+                          "id": 17,
+                          "name": "bytes",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "346:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes_storage_ptr",
+                            "typeString": "bytes"
+                          }
+                        },
+                        "visibility": "internal"
+                      },
+                      {
+                        "constant": false,
+                        "id": 20,
+                        "mutability": "mutable",
+                        "name": "_salt",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 25,
+                        "src": "370:13:1",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "typeName": {
+                          "id": 19,
+                          "name": "bytes32",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "370:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "345:39:1"
+                  },
+                  "returnParameters": {
+                    "id": 24,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 23,
+                        "mutability": "mutable",
+                        "name": "createdContract",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 25,
+                        "src": "403:31:1",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        "typeName": {
+                          "id": 22,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "403:15:1",
+                          "stateMutability": "payable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "402:33:1"
+                  },
+                  "scope": 26,
+                  "src": "330:106:1",
+                  "stateMutability": "nonpayable",
+                  "virtual": false,
+                  "visibility": "external"
+                }
+              ],
+              "scope": 27,
+              "src": "24:414:1"
+            }
+          ],
+          "src": "0:439:1"
+        },
+        "id": 1
+      }
+    }
+  }
+}
