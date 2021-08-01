@@ -1,10 +1,11 @@
 {
-  "name": "Poster",
+  "name": "@poster/contracts",
   "version": "5.0.0",
   "description": "A ridiculously simple general purpose social media smart contract. It takes a string as a parameter and emits that string, along with msg.sender, as an event. That's it.",
   "author": "Auryn Macmillan <hi@auryn.xyz>",
   "license": "LGPL-3.0+",
   "scripts": {
+    "chain": "hardhat node --port 8555",
     "compile": "hardhat compile",
     "test": "hardhat test",
     "deploy-contract": "hardhat run scripts/deploy.js",
@@ -12,7 +13,7 @@
     "create-local": "graph create auryn-macmillan/poster --node http://127.0.0.1:8020",
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy auryn-macmillan/poster --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy": "graph deploy jjperezaguinaga/poster --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "deploy-local": "graph deploy auryn-macmillan/poster --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
   },
   "devDependencies": {
