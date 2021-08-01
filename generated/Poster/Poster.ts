@@ -10,29 +10,25 @@ import {
   BigInt
 } from "@graphprotocol/graph-ts";
 
-export class newPost extends ethereum.Event {
-  get params(): newPost__Params {
-    return new newPost__Params(this);
+export class NewPost extends ethereum.Event {
+  get params(): NewPost__Params {
+    return new NewPost__Params(this);
   }
 }
 
-export class newPost__Params {
-  _event: newPost;
+export class NewPost__Params {
+  _event: NewPost;
 
-  constructor(event: newPost) {
+  constructor(event: NewPost) {
     this._event = event;
   }
 
-  get id(): BigInt {
-    return this._event.parameters[0].value.toBigInt();
-  }
-
-  get poster(): Address {
-    return this._event.parameters[1].value.toAddress();
+  get user(): Address {
+    return this._event.parameters[0].value.toAddress();
   }
 
   get content(): string {
-    return this._event.parameters[2].value.toString();
+    return this._event.parameters[1].value.toString();
   }
 }
 
@@ -59,12 +55,8 @@ export class PostCall__Inputs {
     this._call = call;
   }
 
-  get id(): BigInt {
-    return this._call.inputValues[0].value.toBigInt();
-  }
-
   get content(): string {
-    return this._call.inputValues[1].value.toString();
+    return this._call.inputValues[0].value.toString();
   }
 }
 
