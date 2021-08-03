@@ -9,10 +9,10 @@ describe("Poster should:", function() {
     expect(await poster.address);
   });
 
-  it("let user make a post", async function() {
+  it("emit an event when post() is called", async function() {
     let content =
-      '{"post":{type":"microblog","text":"this is a post from user"}}';
-    // Test that a NewPost event was emitted with the correct id, user, and content
+      '{"post":{"type":"microblog","text":"this is a post from user"}}';
+    // Test that a NewPost event was emitted with the correct use and content
     await expect(await poster.connect(user).post(content))
       .to.emit(poster, "NewPost")
       .withArgs(user.address, content);

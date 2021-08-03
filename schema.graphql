@@ -1,6 +1,0 @@
-type Post @entity {
-  id: ID!
-  poster: Bytes!
-  type: String!
-  content: String!
-}
