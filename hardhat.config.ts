@@ -32,6 +32,10 @@ module.exports = {
       ...sharedNetworkConfig,
       url: `https://kovan.infura.io/v3/${INFURA_KEY}`,
     },
+    rinkeby: {
+      ...sharedNetworkConfig,
+      url: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
+    },
   },
   namedAccounts: {
     deployer: 0,

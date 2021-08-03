@@ -1,18 +1,6 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// When running the script with `hardhat run <script>` you'll find the Hardhat
-// Runtime Environment's members available in the global scope.
 const hre = require("hardhat");
 
 async function main() {
-  // Hardhat always runs the compile task when running scripts with its command
-  // line interface.
-  //
-  // If this script is run directly using `node` you may want to call compile
-  // manually to make sure everything is compiled
-  // await hre.run('compile');
-
   const assert = require("assert");
 
   const zeros =
@@ -79,13 +67,9 @@ async function main() {
     Poster.bytecode,
     zeros
   );
-  console.log(targetAddress);
   await singletonFactory.deploy(Poster.bytecode, zeros);
   const poster = await hre.ethers.getContractAt("Poster", targetAddress);
-  console.log(
-    "Poster code: ",
-    await hre.ethers.provider.getCode(targetAddress)
-  );
+  console.log("Poster deployed to: ", targetAddress);
   const post =
     '{"post":{"type":"microblog","text":"Just deployed poster! 🎉"}}';
   const tx = await poster.post(post);

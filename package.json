@@ -5,15 +5,10 @@
   "author": "Auryn Macmillan <hi@auryn.xyz>",
   "license": "LGPL-3.0+",
   "scripts": {
-    "compile": "hardhat compile",
+    "build": "hardhat compile",
     "test": "hardhat test",
-    "deploy-contract": "hardhat run scripts/deploy.js",
-    "create": "graph create auryn-macmillan/poster --node https://api.thegraph.com/deploy/",
-    "create-local": "graph create auryn-macmillan/poster --node http://127.0.0.1:8020",
-    "codegen": "graph codegen",
-    "build": "graph build",
-    "deploy": "graph deploy auryn-macmillan/poster --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
-    "deploy-local": "graph deploy auryn-macmillan/poster --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
+    "deploy": "hardhat run scripts/deploy.js",
+    "verify": "hardhat run scripts/verify.js"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.18.0",
@@ -21,6 +16,7 @@
   },
   "dependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^2.1.4",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@typechain/ethers-v5": "^6.0.5",
     "chai": "^4.3.4",
