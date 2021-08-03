@@ -1,6 +1,6 @@
 {
   "name": "Poster",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "A ridiculously simple general purpose social media smart contract. It takes a string as a parameter and emits that string, along with msg.sender, as an event. That's it.",
   "author": "Auryn Macmillan <hi@auryn.xyz>",
   "license": "LGPL-3.0+",
