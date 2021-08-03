@@ -1,5 +1,5 @@
 {
-  "id": "5fd541e894aef30a68e131d227b71ae0",
+  "id": "630410a356375ae9750341c3b27b386e",
   "_format": "hh-sol-build-info-1",
   "solcVersion": "0.8.0",
   "solcLongVersion": "0.8.0+commit.c7dfd78e",
@@ -13,7 +13,7 @@
     "settings": {
       "optimizer": {
         "enabled": true,
-        "runs": 4294967295
+        "runs": 10000000
       },
       "outputSelection": {
         "*": {

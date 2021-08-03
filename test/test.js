@@ -12,7 +12,7 @@ describe("Poster should:", function() {
   it("emit an event when post() is called", async function() {
     let content =
       '{"post":{"type":"microblog","text":"this is a post from user"}}';
-    // Test that a NewPost event was emitted with the correct use and content
+    // Test that a NewPost event was emitted with the correct user, and content
     await expect(await poster.connect(user).post(content))
       .to.emit(poster, "NewPost")
       .withArgs(user.address, content);
