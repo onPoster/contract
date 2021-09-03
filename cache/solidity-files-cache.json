@@ -1,42 +1,8 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/auryn/git/auryn-macmillan/poster/contracts/Poster.sol": {
-      "lastModificationDate": 1628010887833,
-      "contentHash": "2ca4c899308fccda5ea00160de6fadeb",
-      "sourceName": "contracts/Poster.sol",
-      "solcConfig": {
-        "version": "0.8.0",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 10000000
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.8.0"
-      ],
-      "artifacts": [
-        "Poster"
-      ]
-    },
-    "/home/auryn/git/auryn-macmillan/poster/contracts/interfaces/IPoster.sol": {
-      "lastModificationDate": 1627574839789,
+    "/home/auryn/git/poster/contract/contracts/interfaces/IPoster.sol": {
+      "lastModificationDate": 1630627992853,
       "contentHash": "5ec5e8801f59e0b368472363f1ebbed4",
       "sourceName": "contracts/interfaces/IPoster.sol",
       "solcConfig": {
@@ -69,8 +35,8 @@
         "IPoster"
       ]
     },
-    "/home/auryn/git/auryn-macmillan/poster/contracts/interfaces/ISingletonFactory.sol": {
-      "lastModificationDate": 1627575040974,
+    "/home/auryn/git/poster/contract/contracts/interfaces/ISingletonFactory.sol": {
+      "lastModificationDate": 1630627992853,
       "contentHash": "02b7ff5374bf4bdb71f8fd235d36b32a",
       "sourceName": "contracts/interfaces/ISingletonFactory.sol",
       "solcConfig": {
@@ -101,6 +67,40 @@
       ],
       "artifacts": [
         "ISingletonFactory"
+      ]
+    },
+    "/home/auryn/git/poster/contract/contracts/Poster.sol": {
+      "lastModificationDate": 1630627992853,
+      "contentHash": "2ca4c899308fccda5ea00160de6fadeb",
+      "sourceName": "contracts/Poster.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.0"
+      ],
+      "artifacts": [
+        "Poster"
       ]
     }
   }

@@ -36,6 +36,10 @@ module.exports = {
       ...sharedNetworkConfig,
       url: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
     },
+    arb1: {
+      ...sharedNetworkConfig,
+      url: `https://arb1.arbitrum.io/rpc`,
+    },
   },
   namedAccounts: {
     deployer: 0,

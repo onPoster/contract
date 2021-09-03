@@ -3,8 +3,8 @@ const hre = require("hardhat");
 async function main() {
   const assert = require("assert");
 
-  const zeros =
-    "0x0000000000000000000000000000000000000000000000000000000000000000";
+  const salt =
+    "0x51a9566bdb2664f8cb31cd79d50e2c10ea34f765e27bc8e3ff3c60175ad4cb6c";
 
   const sfABI = [
     {
@@ -36,9 +36,10 @@ async function main() {
   ];
 
   const wallet = await hre.ethers.getSigner();
+  console.log("Using address: ", wallet.address);
 
   const singletonDeployer = "0xBb6e024b9cFFACB947A71991E386681B1Cd1477D";
-  const singletonFactory = new hre.ethers.Contract(
+  const sf = new hre.ethers.Contract(
     "0xce0042B868300000d44A59004Da54A005ffdcf9f",
     sfABI,
     wallet
@@ -64,10 +65,10 @@ async function main() {
 
   const Poster = await hre.ethers.getContractFactory("Poster");
   const targetAddress = await singletonFactory.callStatic.deploy(
-    Poster.bytecode,
-    zeros
+    "Poster.bytecode",
+    salt
   );
-  await singletonFactory.deploy(Poster.bytecode, zeros);
+  await singletonFactory.deploy(Poster.bytecode, salt);
   const poster = await hre.ethers.getContractAt("Poster", targetAddress);
   console.log("Poster deployed to: ", targetAddress);
   const post =
