@@ -39,7 +39,7 @@ async function main() {
   console.log("Using address: ", wallet.address);
 
   const singletonDeployer = "0xBb6e024b9cFFACB947A71991E386681B1Cd1477D";
-  const sf = new hre.ethers.Contract(
+  const singletonFactory = new hre.ethers.Contract(
     "0xce0042B868300000d44A59004Da54A005ffdcf9f",
     sfABI,
     wallet
