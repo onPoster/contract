@@ -65,7 +65,7 @@ async function main() {
 
   const Poster = await hre.ethers.getContractFactory("Poster");
   const targetAddress = await singletonFactory.callStatic.deploy(
-    "Poster.bytecode",
+    Poster.bytecode,
     salt
   );
   await singletonFactory.deploy(Poster.bytecode, salt);
