@@ -577,6 +577,16 @@
     "@types/sinon-chai" "^3.2.3"
     "@types/web3" "1.0.19"
 
+"@openzeppelin/contracts-upgradeable@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts-upgradeable/-/contracts-upgradeable-4.3.2.tgz#92df481362e366c388fc02133cf793029c744cea"
+  integrity sha512-i/pOaOtcqDk4UqsrOv735uYyTbn6dvfiuVu5hstsgV6c4ZKUtu88/31zT2BzkCg+3JfcwOfgg2TtRKVKKZIGkQ==
+
+"@openzeppelin/contracts@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.3.2.tgz#ff80affd6d352dbe1bbc5b4e1833c41afd6283b6"
+  integrity sha512-AybF1cesONZStg5kWf6ao9OlqTZuPqddvprc0ky7lrUVOjXeKpmQ2Y9FK+6ygxasb+4aic4O5pneFBfwVsRRRg==
+
 "@protobufjs/utf8@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
