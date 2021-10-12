@@ -8,7 +8,8 @@
 ╚═╝      ╚═════╝ ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
 
 A ridiculously simple general purpose social media smart contract.
-It takes a string as a parameter and emits that string, along with msg.sender, as an event. That's it.
+It takes a string and tags as parameters and emits the string, tags, and _msgSender() as an event. That's it.
+(It's also compatible with metatransactions)
 
 Made with ❤️ by Auryn.eth
 
