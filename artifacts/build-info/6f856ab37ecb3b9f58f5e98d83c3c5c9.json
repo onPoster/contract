@@ -1,13 +1,13 @@
 {
-  "id": "630410a356375ae9750341c3b27b386e",
+  "id": "6f856ab37ecb3b9f58f5e98d83c3c5c9",
   "_format": "hh-sol-build-info-1",
-  "solcVersion": "0.8.0",
-  "solcLongVersion": "0.8.0+commit.c7dfd78e",
+  "solcVersion": "0.7.6",
+  "solcLongVersion": "0.7.6+commit.7338295f",
   "input": {
     "language": "Solidity",
     "sources": {
       "contracts/interfaces/ISingletonFactory.sol": {
-        "content": "// SPDX-License-Identifier: LGPL-3.0-only\n\npragma solidity 0.8.0;\n\ninterface ISingletonFactory {\n     /// @dev Deploys `_initCode` using `_salt` for defining the deterministic address.\n     /// @param _initCode Initialization code.\n     /// @param _salt Arbitrary value to modify resulting address.\n     /// @return createdContract Created contract address.\n    function deploy(bytes memory _initCode, bytes32 _salt) external returns (address payable createdContract);\n}\n"
+        "content": "// SPDX-License-Identifier: LGPL-3.0-only\n\npragma solidity 0.7.6;\n\ninterface ISingletonFactory {\n     /// @dev Deploys `_initCode` using `_salt` for defining the deterministic address.\n     /// @param _initCode Initialization code.\n     /// @param _salt Arbitrary value to modify resulting address.\n     /// @return createdContract Created contract address.\n    function deploy(bytes memory _initCode, bytes32 _salt) external returns (address payable createdContract);\n}\n"
       }
     },
     "settings": {
@@ -100,8 +100,8 @@
               "id": 1,
               "literals": [
                 "solidity",
-                "0.8",
-                ".0"
+                "0.7",
+                ".6"
               ],
               "nodeType": "PragmaDirective",
               "src": "43:22:0"

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-only
 
-pragma solidity 0.8.0;
+pragma solidity 0.7.6;
 
 interface ISingletonFactory {
      /// @dev Deploys `_initCode` using `_salt` for defining the deterministic address.

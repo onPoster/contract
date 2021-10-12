@@ -2,11 +2,11 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/auryn/git/poster/contract/contracts/interfaces/IPoster.sol": {
-      "lastModificationDate": 1630627992853,
-      "contentHash": "5ec5e8801f59e0b368472363f1ebbed4",
+      "lastModificationDate": 1634001886947,
+      "contentHash": "3292646a3dd8ea7b930e1ede03d8425e",
       "sourceName": "contracts/interfaces/IPoster.sol",
       "solcConfig": {
-        "version": "0.8.0",
+        "version": "0.7.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -29,18 +29,18 @@
       },
       "imports": [],
       "versionPragmas": [
-        "0.8.0"
+        "0.7.6"
       ],
       "artifacts": [
         "IPoster"
       ]
     },
     "/home/auryn/git/poster/contract/contracts/interfaces/ISingletonFactory.sol": {
-      "lastModificationDate": 1630627992853,
-      "contentHash": "02b7ff5374bf4bdb71f8fd235d36b32a",
+      "lastModificationDate": 1634000992171,
+      "contentHash": "5c93a7e2e3bc8533061eaa5230cc08fc",
       "sourceName": "contracts/interfaces/ISingletonFactory.sol",
       "solcConfig": {
-        "version": "0.8.0",
+        "version": "0.7.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -63,18 +63,90 @@
       },
       "imports": [],
       "versionPragmas": [
-        "0.8.0"
+        "0.7.6"
       ],
       "artifacts": [
         "ISingletonFactory"
       ]
     },
     "/home/auryn/git/poster/contract/contracts/Poster.sol": {
-      "lastModificationDate": 1630627992853,
-      "contentHash": "2ca4c899308fccda5ea00160de6fadeb",
+      "lastModificationDate": 1634000973586,
+      "contentHash": "d856253b42cd870a481424933999da1d",
       "sourceName": "contracts/Poster.sol",
       "solcConfig": {
-        "version": "0.8.0",
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@opengsn/contracts/src/BaseRelayRecipient.sol"
+      ],
+      "versionPragmas": [
+        "0.7.6"
+      ],
+      "artifacts": [
+        "Poster"
+      ]
+    },
+    "/home/auryn/git/poster/contract/node_modules/@opengsn/contracts/src/BaseRelayRecipient.sol": {
+      "lastModificationDate": 1633999926474,
+      "contentHash": "a4b1e197b7a40001833f134ce8b9f2db",
+      "sourceName": "@opengsn/contracts/src/BaseRelayRecipient.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IRelayRecipient.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.6"
+      ],
+      "artifacts": [
+        "BaseRelayRecipient"
+      ]
+    },
+    "/home/auryn/git/poster/contract/node_modules/@opengsn/contracts/src/interfaces/IRelayRecipient.sol": {
+      "lastModificationDate": 1633999926494,
+      "contentHash": "5dbb8c10c4f0ad251103872faa31a355",
+      "sourceName": "@opengsn/contracts/src/interfaces/IRelayRecipient.sol",
+      "solcConfig": {
+        "version": "0.7.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -97,10 +169,10 @@
       },
       "imports": [],
       "versionPragmas": [
-        "0.8.0"
+        ">=0.7.6"
       ],
       "artifacts": [
-        "Poster"
+        "IRelayRecipient"
       ]
     }
   }

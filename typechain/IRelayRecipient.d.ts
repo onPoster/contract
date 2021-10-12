@@ -11,8 +11,6 @@ import {
   PopulatedTransaction,
   Contract,
   ContractTransaction,
-  Overrides,
-  PayableOverrides,
   CallOverrides,
 } from "ethers";
 import { BytesLike } from "@ethersproject/bytes";
@@ -20,56 +18,34 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import { TypedEventFilter, TypedEvent, TypedListener } from "./commons";
 
-interface PosterInterface extends ethers.utils.Interface {
+interface IRelayRecipientInterface extends ethers.utils.Interface {
   functions: {
-    "init()": FunctionFragment;
     "isTrustedForwarder(address)": FunctionFragment;
-    "post(string,bytes32)": FunctionFragment;
-    "trustedForwarder()": FunctionFragment;
     "versionRecipient()": FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "init", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "isTrustedForwarder",
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: "post",
-    values: [string, BytesLike]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "trustedForwarder",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
     functionFragment: "versionRecipient",
     values?: undefined
   ): string;
 
-  decodeFunctionResult(functionFragment: "init", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "isTrustedForwarder",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "post", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "trustedForwarder",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(
     functionFragment: "versionRecipient",
     data: BytesLike
   ): Result;
 
-  events: {
-    "NewPost(address,bytes32,string)": EventFragment;
-  };
-
-  getEvent(nameOrSignatureOrTopic: "NewPost"): EventFragment;
+  events: {};
 }
 
-export class Poster extends Contract {
+export class IRelayRecipient extends Contract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
@@ -110,17 +86,9 @@ export class Poster extends Contract {
     toBlock?: string | number | undefined
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
-  interface: PosterInterface;
+  interface: IRelayRecipientInterface;
 
   functions: {
-    init(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
-    "init()"(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
     isTrustedForwarder(
       forwarder: string,
       overrides?: CallOverrides
@@ -131,34 +99,10 @@ export class Poster extends Contract {
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    post(
-      content: string,
-      tag: BytesLike,
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
-    "post(string,bytes32)"(
-      content: string,
-      tag: BytesLike,
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
-    trustedForwarder(overrides?: CallOverrides): Promise<[string]>;
-
-    "trustedForwarder()"(overrides?: CallOverrides): Promise<[string]>;
-
     versionRecipient(overrides?: CallOverrides): Promise<[string]>;
 
     "versionRecipient()"(overrides?: CallOverrides): Promise<[string]>;
   };
-
-  init(
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
-  "init()"(
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
 
   isTrustedForwarder(
     forwarder: string,
@@ -170,31 +114,11 @@ export class Poster extends Contract {
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  post(
-    content: string,
-    tag: BytesLike,
-    overrides?: PayableOverrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
-  "post(string,bytes32)"(
-    content: string,
-    tag: BytesLike,
-    overrides?: PayableOverrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
-  trustedForwarder(overrides?: CallOverrides): Promise<string>;
-
-  "trustedForwarder()"(overrides?: CallOverrides): Promise<string>;
-
   versionRecipient(overrides?: CallOverrides): Promise<string>;
 
   "versionRecipient()"(overrides?: CallOverrides): Promise<string>;
 
   callStatic: {
-    init(overrides?: CallOverrides): Promise<void>;
-
-    "init()"(overrides?: CallOverrides): Promise<void>;
-
     isTrustedForwarder(
       forwarder: string,
       overrides?: CallOverrides
@@ -204,48 +128,15 @@ export class Poster extends Contract {
       forwarder: string,
       overrides?: CallOverrides
     ): Promise<boolean>;
-
-    post(
-      content: string,
-      tag: BytesLike,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    "post(string,bytes32)"(
-      content: string,
-      tag: BytesLike,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    trustedForwarder(overrides?: CallOverrides): Promise<string>;
-
-    "trustedForwarder()"(overrides?: CallOverrides): Promise<string>;
 
     versionRecipient(overrides?: CallOverrides): Promise<string>;
 
     "versionRecipient()"(overrides?: CallOverrides): Promise<string>;
   };
 
-  filters: {
-    NewPost(
-      user: string | null,
-      tag: BytesLike | null,
-      content: null
-    ): TypedEventFilter<
-      [string, string, string],
-      { user: string; tag: string; content: string }
-    >;
-  };
+  filters: {};
 
   estimateGas: {
-    init(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
-    "init()"(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
     isTrustedForwarder(
       forwarder: string,
       overrides?: CallOverrides
@@ -255,22 +146,6 @@ export class Poster extends Contract {
       forwarder: string,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
-
-    post(
-      content: string,
-      tag: BytesLike,
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
-    "post(string,bytes32)"(
-      content: string,
-      tag: BytesLike,
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
-    trustedForwarder(overrides?: CallOverrides): Promise<BigNumber>;
-
-    "trustedForwarder()"(overrides?: CallOverrides): Promise<BigNumber>;
 
     versionRecipient(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -278,14 +153,6 @@ export class Poster extends Contract {
   };
 
   populateTransaction: {
-    init(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    "init()"(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
     isTrustedForwarder(
       forwarder: string,
       overrides?: CallOverrides
@@ -293,24 +160,6 @@ export class Poster extends Contract {
 
     "isTrustedForwarder(address)"(
       forwarder: string,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    post(
-      content: string,
-      tag: BytesLike,
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    "post(string,bytes32)"(
-      content: string,
-      tag: BytesLike,
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    trustedForwarder(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    "trustedForwarder()"(
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
