@@ -20,7 +20,7 @@ pragma solidity 0.7.6;
 import "@opengsn/contracts/src/BaseRelayRecipient.sol";
 
 contract Poster is BaseRelayRecipient{
-    event NewPost(address indexed user, bytes32 indexed tag, string content);
+    event NewPost(address indexed user, string indexed tag, string content);
 
     function init() public {
         trustedForwarder = 0xD216153c06E857cD7f72665E0aF1d7D82172F494;
@@ -28,7 +28,7 @@ contract Poster is BaseRelayRecipient{
 
     string public override versionRecipient = "2.2.0";
 
-    function post(string calldata content, bytes32 tag) public payable {
+    function post(string calldata content, string calldata tag) public payable {
         emit NewPost(_msgSender(), tag, content);
     }
 }

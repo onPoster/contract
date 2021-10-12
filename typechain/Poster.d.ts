@@ -24,7 +24,7 @@ interface PosterInterface extends ethers.utils.Interface {
   functions: {
     "init()": FunctionFragment;
     "isTrustedForwarder(address)": FunctionFragment;
-    "post(string,bytes32)": FunctionFragment;
+    "post(string,string)": FunctionFragment;
     "trustedForwarder()": FunctionFragment;
     "versionRecipient()": FunctionFragment;
   };
@@ -36,7 +36,7 @@ interface PosterInterface extends ethers.utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "post",
-    values: [string, BytesLike]
+    values: [string, string]
   ): string;
   encodeFunctionData(
     functionFragment: "trustedForwarder",
@@ -63,7 +63,7 @@ interface PosterInterface extends ethers.utils.Interface {
   ): Result;
 
   events: {
-    "NewPost(address,bytes32,string)": EventFragment;
+    "NewPost(address,string,string)": EventFragment;
   };
 
   getEvent(nameOrSignatureOrTopic: "NewPost"): EventFragment;
@@ -133,13 +133,13 @@ export class Poster extends Contract {
 
     post(
       content: string,
-      tag: BytesLike,
+      tag: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    "post(string,bytes32)"(
+    "post(string,string)"(
       content: string,
-      tag: BytesLike,
+      tag: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
@@ -172,13 +172,13 @@ export class Poster extends Contract {
 
   post(
     content: string,
-    tag: BytesLike,
+    tag: string,
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  "post(string,bytes32)"(
+  "post(string,string)"(
     content: string,
-    tag: BytesLike,
+    tag: string,
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -207,13 +207,13 @@ export class Poster extends Contract {
 
     post(
       content: string,
-      tag: BytesLike,
+      tag: string,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    "post(string,bytes32)"(
+    "post(string,string)"(
       content: string,
-      tag: BytesLike,
+      tag: string,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -229,7 +229,7 @@ export class Poster extends Contract {
   filters: {
     NewPost(
       user: string | null,
-      tag: BytesLike | null,
+      tag: string | null,
       content: null
     ): TypedEventFilter<
       [string, string, string],
@@ -258,13 +258,13 @@ export class Poster extends Contract {
 
     post(
       content: string,
-      tag: BytesLike,
+      tag: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    "post(string,bytes32)"(
+    "post(string,string)"(
       content: string,
-      tag: BytesLike,
+      tag: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
@@ -298,13 +298,13 @@ export class Poster extends Contract {
 
     post(
       content: string,
-      tag: BytesLike,
+      tag: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    "post(string,bytes32)"(
+    "post(string,string)"(
       content: string,
-      tag: BytesLike,
+      tag: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
