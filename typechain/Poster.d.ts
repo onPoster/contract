@@ -21,15 +21,18 @@ import { TypedEventFilter, TypedEvent, TypedListener } from "./commons";
 
 interface PosterInterface extends ethers.utils.Interface {
   functions: {
-    "post(string)": FunctionFragment;
+    "post(string,string)": FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "post", values: [string]): string;
+  encodeFunctionData(
+    functionFragment: "post",
+    values: [string, string]
+  ): string;
 
   decodeFunctionResult(functionFragment: "post", data: BytesLike): Result;
 
   events: {
-    "NewPost(address,string)": EventFragment;
+    "NewPost(address,string,string)": EventFragment;
   };
 
   getEvent(nameOrSignatureOrTopic: "NewPost"): EventFragment;
@@ -81,46 +84,64 @@ export class Poster extends Contract {
   functions: {
     post(
       content: string,
+      tag: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    "post(string)"(
+    "post(string,string)"(
       content: string,
+      tag: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
 
   post(
     content: string,
+    tag: string,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  "post(string)"(
+  "post(string,string)"(
     content: string,
+    tag: string,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    post(content: string, overrides?: CallOverrides): Promise<void>;
+    post(
+      content: string,
+      tag: string,
+      overrides?: CallOverrides
+    ): Promise<void>;
 
-    "post(string)"(content: string, overrides?: CallOverrides): Promise<void>;
+    "post(string,string)"(
+      content: string,
+      tag: string,
+      overrides?: CallOverrides
+    ): Promise<void>;
   };
 
   filters: {
     NewPost(
       user: string | null,
-      content: null
-    ): TypedEventFilter<[string, string], { user: string; content: string }>;
+      content: null,
+      tag: string | null
+    ): TypedEventFilter<
+      [string, string, string],
+      { user: string; content: string; tag: string }
+    >;
   };
 
   estimateGas: {
     post(
       content: string,
+      tag: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    "post(string)"(
+    "post(string,string)"(
       content: string,
+      tag: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
   };
@@ -128,11 +149,13 @@ export class Poster extends Contract {
   populateTransaction: {
     post(
       content: string,
+      tag: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    "post(string)"(
+    "post(string,string)"(
       content: string,
+      tag: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
   };

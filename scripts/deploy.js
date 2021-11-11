@@ -4,7 +4,7 @@ async function main() {
   const assert = require("assert");
 
   const salt =
-    "0x51a9566bdb2664f8cb31cd79d50e2c10ea34f765e27bc8e3ff3c60175ad4cb6c";
+    "0x9245db59943806d06245bc7847b3efb2c899d11b621a0f01bb02fd730e33aed2";
 
   const sfABI = [
     {
@@ -71,9 +71,10 @@ async function main() {
   await singletonFactory.deploy(Poster.bytecode, salt);
   const poster = await hre.ethers.getContractAt("Poster", targetAddress);
   console.log("Poster deployed to: ", targetAddress);
+  const tag = "post";
   const post =
     '{"post":{"type":"microblog","text":"Just deployed poster! 🎉"}}';
-  const tx = await poster.post(post);
+  const tx = await poster.post(post, tag);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
