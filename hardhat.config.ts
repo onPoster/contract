@@ -20,6 +20,9 @@ if (PK) {
 
 module.exports = {
   networks: {
+    localhost: {
+      url: 'http://127.0.0.1:8555',
+    },
     mainnet: {
       ...sharedNetworkConfig,
       url: `https://mainnet.infura.io/v3/${INFURA_KEY}`,

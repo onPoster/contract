@@ -5,9 +5,11 @@
   "author": "Auryn Macmillan <hi@auryn.xyz>",
   "license": "LGPL-3.0+",
   "scripts": {
+    "node": "hardhat node --port 8555 --hostname 0.0.0.0",
     "build": "hardhat compile",
     "test": "hardhat test",
     "deploy": "hardhat run scripts/deploy.js",
+    "deploy:local": "yarn deploy --network localhost",
     "verify": "hardhat run scripts/verify.js"
   },
   "devDependencies": {
