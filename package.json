@@ -5,16 +5,16 @@
   "author": "Auryn Macmillan <hi@auryn.xyz>",
   "license": "LGPL-3.0+",
   "scripts": {
-    "node": "hardhat node --port 8555 --hostname 0.0.0.0",
+    "node": "hardhat node --network hardhat",
     "build": "hardhat compile",
     "test": "hardhat test",
     "deploy": "hardhat run scripts/deploy.js",
-    "deploy:local": "yarn deploy --network localhost",
     "verify": "hardhat run scripts/verify.js"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.18.0",
-    "@graphprotocol/graph-ts": "^0.18.0"
+    "@graphprotocol/graph-ts": "^0.18.0",
+    "@tenderly/hardhat-tenderly": "^1.0.13"
   },
   "dependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
@@ -25,7 +25,7 @@
     "dotenv": "^8.2.0",
     "ethereum-waffle": "^3.3.0",
     "ethers": "^5.0.32",
-    "hardhat": "^2.1.2",
+    "hardhat": "2.6.0",
     "hardhat-typechain": "^0.3.5",
     "ts-generator": "^0.1.1",
     "ts-node": "^9.1.1",
