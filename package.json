@@ -12,8 +12,6 @@
     "verify": "hardhat run scripts/verify.js"
   },
   "devDependencies": {
-    "@graphprotocol/graph-cli": "^0.18.0",
-    "@graphprotocol/graph-ts": "^0.18.0",
     "@tenderly/hardhat-tenderly": "^1.0.13"
   },
   "dependencies": {

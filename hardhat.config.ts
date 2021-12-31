@@ -19,10 +19,7 @@ if (PK) {
   };
 }
 
-const defaultNetwork = "localhost";
-
 module.exports = {
-  defaultNetwork,
   networks: {
     localhost: {
       url: "http://localhost:8545",
