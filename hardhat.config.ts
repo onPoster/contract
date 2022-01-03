@@ -1,5 +1,6 @@
 import "@nomiclabs/hardhat-waffle";
 import "hardhat-typechain";
+import "@tenderly/hardhat-tenderly";
 import dotenv from 'dotenv';
 import type { HttpNetworkUserConfig } from "hardhat/types";
 
@@ -20,13 +21,16 @@ if (PK) {
 
 module.exports = {
   networks: {
+    localhost: {
+      url: "http://localhost:8545",
+    },
     mainnet: {
       ...sharedNetworkConfig,
       url: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
     },
     goerli: {
       ...sharedNetworkConfig,
-      url: `https://goerly.infura.io/v3/${INFURA_KEY}`,
+      url: `https://goerli.infura.io/v3/${INFURA_KEY}`,
     },
     kovan: {
       ...sharedNetworkConfig,
