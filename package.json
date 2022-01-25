@@ -9,7 +9,8 @@
     "build": "hardhat compile",
     "test": "hardhat test",
     "deploy": "hardhat run scripts/deploy.js",
-    "verify": "hardhat run scripts/verify.js"
+    "verify": "hardhat run scripts/verify.js",
+    "task:post": "hardhat post --network localhost --content"
   },
   "devDependencies": {
     "@tenderly/hardhat-tenderly": "^1.0.13"
