@@ -75,7 +75,7 @@ async function main() {
   console.log("Poster deployed to: ", targetAddress);
   const tag = "post";
   const post =
-    '{"post":{"type":"microblog","text":"Just deployed poster! 🎉"}}';
+    '{"type":"microblog","text":"Just deployed poster! 🎉"}';
   const tx = await poster.post(post, tag);
   console.log('Transaction Hash', tx.hash);
 }
