@@ -56,6 +56,14 @@ module.exports = {
       ...sharedNetworkConfig,
       url: `https://arb1.arbitrum.io/rpc`,
     },
+    optimism: {
+      ...sharedNetworkConfig,
+      url: `https://mainnet.optimism.io`,
+    },
+    polygon: {
+      ...sharedNetworkConfig,
+      url: `https://polygon-rpc.com`,
+    },
   },
   namedAccounts: {
     deployer: 0,

@@ -70,8 +70,11 @@ async function main() {
     Poster.bytecode,
     salt
   );
-  await singletonFactory.deploy(Poster.bytecode, salt, { gasLimit: 5000000 });
+  await singletonFactory.deploy(Poster.bytecode, salt, { gasLimit: 3000000 });
   const poster = await hre.ethers.getContractAt("Poster", targetAddress);
+  assert(
+    (await hre.ethers.provider.getCode(poster.address)) != "0x"
+  );
   console.log("Poster deployed to: ", targetAddress);
   const tag = "post";
   const post =
